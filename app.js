@@ -1,8 +1,11 @@
 const Koa = require('koa');
 const KoaRouter = require('koa-router');
+const morgan = require('koa-morgan');
 
 const app = new Koa();
 const router = new KoaRouter();
+
+app.use(morgan('dev'));
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
